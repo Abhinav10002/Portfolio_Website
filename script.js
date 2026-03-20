@@ -7,18 +7,19 @@ const reveals = document.querySelectorAll(".reveal");
 const contactForm = document.getElementById("contactForm");
 
 const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "light") {
-  body.classList.add("light");
+
+if (savedTheme === "dark") {
+  body.classList.add("dark");
   themeToggle.textContent = "☀️";
 } else {
   themeToggle.textContent = "🌙";
 }
 
 themeToggle.addEventListener("click", () => {
-  body.classList.toggle("light");
-  const isLight = body.classList.contains("light");
-  themeToggle.textContent = isLight ? "☀️" : "🌙";
-  localStorage.setItem("theme", isLight ? "light" : "dark");
+  body.classList.toggle("dark");
+  const isDark = body.classList.contains("dark");
+  themeToggle.textContent = isDark ? "☀️" : "🌙";
+  localStorage.setItem("theme", isDark ? "dark" : "light");
 });
 
 menuBtn.addEventListener("click", () => {
